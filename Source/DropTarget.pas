@@ -1,4 +1,4 @@
-unit DropTarget;
+﻿unit DropTarget;
 // -----------------------------------------------------------------------------
 // Project:         New Drag and Drop Component Suite
 // Module:          DragDrop
@@ -195,6 +195,8 @@ type
     property Targets: TControlList read FTargets;
     property NoScrollZone: TRect read FNoScrollZone write SetNoScrollZone;
     property AsyncTransfer: boolean read FIsAsync;
+    property WinTarget: HWND read GetWinTarget write SetWinTarget;
+
   published
     property DragTypes: TDragTypes read FDragTypes write FDragTypes;
     property GetDataOnEnter: Boolean read FGetDataOnEnter write FGetDataOnEnter default False;
@@ -215,7 +217,7 @@ type
     property ShowImage: boolean read FShowImage write SetShowImage default True;
     // Target
     property Target: TWinControl read GetTarget write SetTarget;
-    property WinTarget: HWND read GetWinTarget write SetWinTarget;
+
     property MultiTarget: boolean read FMultiTarget write FMultiTarget default False;
     property AutoRegister: boolean read FAutoRegister write FAutoRegister default True;
     // Auto-scroll
