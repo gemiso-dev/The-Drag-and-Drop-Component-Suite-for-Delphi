@@ -45,4 +45,18 @@
         <CallTarget Targets="DragDropDR10S:Make;dclDragDropDR10S:Make"/>
     </Target>
     <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+    <ItemGroup Condition="'$(BuildGroup)'=='all'">
+        <BuildGroupProject Include="dclDragDropDR10S.dproj">
+            <ProjectGuid>{C0DFC8CE-6031-4C34-B756-0769C2533BF5}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="DragDropDR10S.dproj">
+            <ProjectGuid>{CF1BD166-46AD-47BF-8B33-6E5CF1C7B934}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+    </ItemGroup>
 </Project>
