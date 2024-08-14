@@ -195,7 +195,7 @@ type
     property Targets: TControlList read FTargets;
     property NoScrollZone: TRect read FNoScrollZone write SetNoScrollZone;
     property AsyncTransfer: boolean read FIsAsync;
-    property WinTarget: HWND read GetWinTarget write SetWinTarget;
+    property WinTarget: HWND read GetWinTarget write SetWinTarget stored False;
 
   published
     property DragTypes: TDragTypes read FDragTypes write FDragTypes;
@@ -1139,7 +1139,7 @@ begin
 
   // Unregister previous target unless MultiTarget is enabled (for backwards
   // compatibility).
-  if (not FMultiTarget) and not(csLoading in ComponentState) then
+  if (not FMultiTarget) and not (csLoading in ComponentState) then
     Unregister;
 
   if (ATarget = nil) then
